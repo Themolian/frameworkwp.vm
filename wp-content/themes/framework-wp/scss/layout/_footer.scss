@@ -1,0 +1,77 @@
+.footer {
+    padding: 0 20px;
+    background-color: #fff9f8;
+    text-align: center; 
+    .inner {
+        padding: 130px 0;
+        @media (max-width: 600px) {
+            padding: 130px 0 65px;
+        }
+    }
+    .logo {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .footer-nav {
+        display: block;
+        margin-bottom: 50px;
+        ul {
+            @include flexbox;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 40px;
+            li {
+                a {
+                    font-weight: 500;
+                    font-family: $body-font;
+                }
+            }
+        }
+    }
+
+    .footer-socials {
+        @include flexbox;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 180px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        a {
+            padding: 0 15px;
+            text-indent: -9999px;
+            width: 15px;
+            height: 15px;
+            &:not(:last-child) {
+                border-right: 1px solid $dark-grey;
+            }
+            &:first-child {
+                background: url(../uploads/facebook.svg) no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+            &:nth-child(2) {
+                background: url(../uploads/twitter.svg) no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+            &:nth-child(3) {
+                background: url(../uploads/insta.svg) no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+            &:nth-child(4) {
+                background: url(../uploads/vimeo.svg) no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+        }
+    }
+
+    .copyright {
+        a {
+            color: $spa-pink;
+        }
+    }
+}

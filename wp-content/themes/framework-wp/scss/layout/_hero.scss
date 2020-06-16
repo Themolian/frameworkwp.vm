@@ -1,0 +1,67 @@
+.hero {
+    padding: 0 20px;
+    .inner {
+        padding: 100px 0;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+    }
+    .hero-content {
+        max-width: 550px;
+    }
+    h4 {
+        font-size: 1em;
+        color: $spa-pink;
+    }
+
+    h1 {
+        font-size: 3em;
+        font-weight: bold;
+    }
+
+    p {
+        color: $dark-grey;
+    }
+
+    .hero-footer {
+        margin-top: 32px;
+        button {
+            &:nth-child(2) {
+                &:hover {
+                    a {
+                        color: $dark-grey;
+                        &:before {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                a {
+                    background-color: transparent;
+                    color: $dark-grey;
+                    border: 0;
+                    @media (max-width: 415px) {
+                        padding-left: 0;
+                    }
+                    &:before {
+                        content: " ";
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 15px;
+                        background-image: url(../uploads/play.svg);
+                        background-position: center;
+                        background-size: 10px;
+                        background-repeat: no-repeat;
+                        width: 50px;
+                        height: 50px;
+                        background-color: #fff0ea;
+                        border-radius: 100%;
+                        transition: .3s all;
+                        @media (max-width: 900px) {
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

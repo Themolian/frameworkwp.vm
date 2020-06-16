@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rufina:wght@400;700&display=swap');
+
+@import
+    'base/variables',
+    'base/mixins',
+
+    'layout/header',
+    'layout/hero',
+    'layout/features',
+    'layout/footer';
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $heading-font;
+        line-height: 1.3em;
+
+        a {
+            font-family: $heading-font;
+        }
+    }
+
+    h2 {
+        font-size: 2.5em;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+    p {
+        line-height: 1.6em;
+        color: $light-grey;
+    }
+    p, a {
+        font-family: $body-font;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    button {
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: 0;
+        &:hover {
+            a {
+                background-color: transparent;
+                color: $spa-pink;
+            }
+        }
+        a {
+            display: block;
+            background-color: $spa-pink;
+            padding: 13px 35px;
+            border: 2px solid $spa-pink;
+            text-align: center;
+            font-size: .9em;
+            color: white;
+            transition: .3s all;
+        }
+        &.rounded {
+            a {
+                border-radius: 25px;
+            }
+        }
+    }
+
+    &.fixed {
+        margin: 0; 
+        height: 100%; 
+        overflow: hidden;
+    }
+}
+/*---------------------------------------------*/
+/*-------------ABOUT - HOME--------------------*/
+/*---------------------------------------------*/
+.about-home {
+    padding: 0 20px;
+    .inner {
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+
+        &:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: url(../uploads/redflower.png) no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        &:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 60px;
+            height: 60px;
+            background: url(../uploads/pink-flower.svg);
+            @media (max-width: 1300px) {
+                top: 85%;
+                right: 0;
+            }
+        }
+
+        h3 {
+            font-family: $body-font;
+            color: $light-grey;
+            font-weight: 500;
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            &:before {
+                content: " ";
+                display: block;
+                width: 100px;
+                height: 100px;
+                margin: 0 auto;
+                margin-bottom: 25px;
+                background: url(../uploads/logo-top.svg) no-repeat;
+            }
+        }
+
+        p {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        button {
+            margin-top: 50px;
+        }
+    }
+}
+
+//To put into _procedures.scss
+.procedures {
+    padding: 0 20px;
+    .inner {
+        text-align: center;
+        padding: 100px 0;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+
+        >p {
+            max-width: 700px;
+            margin: 0 auto;
+            margin-bottom: 32px;
+        }
+    }
+}
+.cards {
+    @include flexbox;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    @media (max-width: 800px) {
+        flex-wrap: wrap;
+    }
+    .card {
+        padding: 15px;
+        border: 1px solid $light-grey;
+        text-align: center;
+        transition: .3s all;
+        @media (max-width: 800px) {
+            width: 45%;
+            text-align: center;
+            &:first-child {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+        }
+        @media (max-width: 700px) {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        &:nth-child(2) {
+            margin: 0 10px;
+            @media (max-width: 800px) {
+                margin: 0;
+                padding-right: 12px;
+            }
+            @media (max-width: 700px) {
+                margin-bottom: 15px;
+            }
+        }
+        &:hover {
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            border: 1px solid transparent;
+            button {
+                a {
+                    background-color: $spa-pink;
+                    border: 2px solid $spa-pink;
+                    color: white;
+                }
+            }
+        }
+        .image {
+            background-color: $dark-grey;
+            width: 100%;
+            height: 220px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        h3 {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 25px;
+        }
+        button {
+            a {
+                background-color: black;
+                border: 2px solid black;
+            }
+        }
+    }
+}
+
+//To put in _testimonials.scss
+
+.testimonials {
+    background-color: #fff9f8;
+    padding: 0 20px;
+    .inner {
+        padding: 100px 0;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+    }
+    .testimonials-wrap {
+        background-color: transparent;
+        border: 0;
+        .flex-nav-prev, .flex-nav-next {
+            display: none;
+        }
+        ul.slides {
+            text-align: center;
+            li {
+                p {
+                    line-height: 1.8em;
+                    font-size: 1.1em;
+                    font-family: $heading-font;
+                    color: black;
+                    max-width: 920px;
+                    margin: 0 auto;
+                    margin-bottom: 25px;
+                    &:before {
+                        content: " ";
+                        display: block;
+                        width: 50px;
+                        height: 50px;
+                        background: url(../uploads/quote.svg) no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        margin: 0 auto;
+                        margin-bottom: 25px;
+                    }
+                }
+                .image {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 auto;
+                    border-radius: 100%;
+                    overflow: hidden;
+                    margin-bottom: 25px;
+                    img {
+                        width: 120%;
+                    }
+                }
+            }
+        }
+        // ul.slides li.testimonial.clone {
+        //     text-align: center;
+        //     p {
+        //         line-height: 1.8em;
+        //         font-size: 1.1em;
+        //         font-family: $heading-font;
+        //         color: black;
+        //         max-width: 920px;
+        //         margin: 0 auto;
+        //         margin-bottom: 25px;
+        //         &:before {
+        //             content: " ";
+        //             display: block;
+        //             width: 50px;
+        //             height: 50px;
+        //             background: url(../uploads/quote.svg) no-repeat;
+        //             background-position: center;
+        //             background-size: contain;
+        //             margin: 0 auto;
+        //             margin-bottom: 25px;
+        //         }
+        //     }
+        //     .image {
+        //         width: 50px;
+        //         height: 50px;
+        //         margin: 0 auto;
+        //         border-radius: 100%;
+        //         overflow: hidden;
+        //         margin-bottom: 25px;
+        //         img {
+        //             width: 120%;
+        //         }
+        //     }
+
+        //     h4 {
+        //         font-size: 1.1em;
+        //         font-weight: bold;
+        //         span {
+        //             font-size: .8em;
+        //             font-family: $body-font;
+        //             font-weight: normal;
+        //         }
+        //     }
+        // }
+    }
+}
+
+//To put in _team.scss
+.team {
+    padding: 0 20px;
+    .inner {
+        padding: 100px 0;
+        text-align: center;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+
+        p {
+            max-width: 750px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.staff {
+    @include flexbox;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    @media (max-width: 705px) {
+        flex-direction: column;
+    }
+
+    .staff-card {
+        position: relative;
+        flex: 1;
+        @media (max-width: 705px) {
+            margin-bottom: 60px;
+        }
+        &:nth-child(2) {
+            @media (min-width: 705px) {
+                margin: 0 25px;
+            }
+        }
+        &:not(:last-child) {
+            margin-right: 25px;
+        }
+        &:hover {
+            .namecard {
+                transform: translateX(-50%) translateY(-10px);
+                box-shadow: 0 0 7px rgba(0,0,0,0.2);
+                .socials {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+        .image {
+            width: 100%;
+            height: 400px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .namecard {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px 30px;
+            background-color: white;
+            width: 70%;
+            transition: .3s all;
+            @media (max-width: 800px) {
+                width: 60%;
+            }
+            @media (max-width: 705px) {
+                transform: translateX(-50%) translateY(-10px);
+                box-shadow: 0 0 7px rgba(0,0,0,0.2);
+            }
+            h3 {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            .socials {
+                @include flexbox;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 120px;
+                margin: 0 auto;
+                margin-top: 15px;
+                transform: translateY(-10px);
+                opacity: 0;
+                transition: .3s all;
+                @media (max-width: 700px) {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                a {
+                    display: block;
+                    text-indent: -9999px;
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid black;
+                    border-radius: 100%;
+                    &:first-child {
+                        background: url(../uploads/facebook.svg) no-repeat;
+                        background-size: 10px 10px;
+                        background-position: center;
+                    }
+                    &:nth-child(2) {
+                        background: url(../uploads/twitter.svg) no-repeat;
+                        background-size: 10px 10px;
+                        background-position: center;
+                    }
+                    &:nth-child(3) {
+                        background: url(../uploads/gplus.svg) no-repeat;
+                        background-size: 10px 10px;
+                        background-position: center;
+                    }
+                    &:nth-child(4) {
+                        background: url(../uploads/insta.svg) no-repeat;
+                        background-size: 10px 10px;
+                        background-position: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//To put in _appointment.scss
+
+.content-wrap {
+    @include flexbox;
+    .image {
+        width: 40%;
+        background: url(../uploads/spa.jpg) no-repeat;
+        img {
+            width: 100%;
+        }
+        @media (max-width: 700px) {
+            display: none;
+        }
+    }
+
+    .form-container {
+        width: 60%;
+        background-color: #fff9f8; 
+        padding: 60px;
+        @media (max-width: 700px) {
+            width: 100%;
+        }
+        h3 {
+            display: none;
+        }
+        .nf-form-content {
+            font-family: $body-font;
+            nf-fields-wrap {
+                @include flexbox;
+                flex-direction: row;
+                flex-wrap: wrap;
+                @media (max-width: 500px) {
+                    flex-direction: column;
+                }
+            }
+            nf-field {
+                width: 48%;
+                box-sizing: border-box;
+                margin-bottom: 15px;
+                font-family: $body-font;
+                &:nth-child(7), &:last-child {
+                    width: 90%;
+                }
+                @media (max-width: 500px) {
+                    width: 100%;
+                    &:nth-child(7), &:last-child {
+                        width: 100%;
+                    }
+                }
+            }
+            .nf-field-container {
+                margin: 0;
+            }
+            input, select {
+                width: 90%;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background: transparent;
+                border: 0;
+                border-bottom: 1px solid lighten(black, 20%);
+                padding: 15px 0;
+                color: lighten(black, 20%);
+                text-transform: uppercase;
+                font-family: $body-font;
+                &:focus {
+                    outline: none;
+                }
+                @media (max-width: 500px) {
+                    width: 100%;
+                }
+            }
+            option {
+                color: lighten(black, 20%);
+            }
+            textarea {
+                width: 100%;
+                background-color: transparent;
+                border: 0;
+                border-bottom: 1px solid lighten(black, 20%);
+                margin-bottom: 15px;
+                font-family: $body-font;
+                &:focus {
+                    outline: none;
+                }
+            }
+            input[type=button] {
+                display: block;
+                max-width: 200px;
+                background-color: $spa-pink;
+                padding: 13px 0;
+                border: 2px solid $spa-pink;
+                text-align: center;
+                font-size: .9em;
+                color: white;
+                transition: .3s all;
+                border-radius: 25px;
+                text-transform: initial;
+                margin-top: 15px;
+                cursor: pointer;
+                &:hover {
+                    background-color: transparent;
+                    color: $spa-pink;
+                }
+            }
+        }
+    }
+}
+
+//To put in _blog.scss
+
+.blog {
+    padding: 0 20px;
+    .inner {
+        padding: 100px 0;
+        text-align: center;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+        p {
+            max-width: 750px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.contact-home {
+    padding: 0 20px;
+    .inner {
+        padding: 100px 0;
+        text-align: center;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+        >p {
+            margin-bottom: 25px;
+        }
+    }
+
+    .contact-container {
+        text-align: left;
+        @include flexbox;
+        align-content: center;
+        flex-wrap: wrap;
+        .deets {
+            width: 30%;
+            @media (max-width: 980px) {
+                width: 100%;
+                order: 2;
+                @include flexbox;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            div {
+                padding-left: 80px;
+                position: relative;
+                &:not(:last-child) {
+                    margin-bottom: 25px;
+                }
+                @media (max-width: 980px) {
+                    &:not(:last-child) {
+                        margin: 0;
+                        padding-right: 20px;
+                    }
+                }
+                @media (max-width: 864px) {
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                }
+                &:before {
+                    content: " ";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 40px;
+                    height: 40px;
+                    background-color: $spa-pink;
+                    border-radius: 100%;
+                }
+                &:first-child {
+                    &:before {
+                        background-image: url(../uploads/location.svg);
+                        background-repeat: no-repeat;
+                        background-size: 18px 18px;
+                        background-position: center;
+                    }
+                }
+                &:nth-child(2) {
+                    &:before {
+                        background-image: url(../uploads/email.svg);
+                        background-repeat: no-repeat;
+                        background-size: 18px 18px;
+                        background-position: center;
+                    }
+                }
+                &:nth-child(3) {
+                    &:before {
+                        background-image: url(../uploads/phone.svg);
+                        background-repeat: no-repeat;
+                        background-size: 18px 18px;
+                        background-position: center;
+                    }
+                }
+            }
+        }
+        .contact-form {
+            width: 70%;
+            @media (max-width: 980px) {
+                width: 100%;
+                order: 1;
+                margin-bottom: 25px;
+            }
+            h3, .nf-form-fields-required {
+                display: none;
+            }
+            form {
+                @include flexbox;
+                flex-direction: column;
+                input, textarea {
+                    appearance: none;
+                    background: transparent;
+                    border: 1px solid $light-grey;
+                    display: block;
+                    padding: 15px 25px;
+                    margin-bottom: 25px;
+                    &::placeholder {
+                        text-transform: uppercase;
+                    }
+                }
+                input[type=button] {
+                    background-color: $spa-pink;
+                    padding: 13px 23px;
+                    border: 2px solid $spa-pink;
+                    border-radius: 25px;
+                    color: white;
+                    max-width: 180px;
+                    margin-bottom: 0;
+                    transition: .3s all;
+                    font-family: $body-font;
+                    &:hover {
+                        background-color: transparent;
+                        color: $spa-pink;
+                    }
+                }
+            }
+        }
+    }
+}
+

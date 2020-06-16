@@ -1,0 +1,172 @@
+// .features-list {
+//     padding: 100px 0;
+//     @include flexbox;
+//     align-items: center;
+//     justify-content: space-between;
+//     flex-wrap: wrap;
+//     @media(max-width: 600px) {
+//         padding: 50px 0;
+//     }
+//     .feature {
+//         position: relative;
+//         width: 25%;
+//         min-height: 500px;
+//         max-height: 500px;
+//         box-sizing: border-box;
+//         padding: 0 2px;
+//         overflow: hidden;
+//         >img {
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             transform: translate(-50%, -50%);
+//         }
+//         &:hover {
+//             .feature-overlay {
+//                 opacity: 1;
+//                 transform: translateX(0);
+//                 pointer-events: all;
+//             }
+//         }
+//         @media (min-width: 600px) {
+//             &:first-child {
+//                 margin-left: 0;
+//             }
+//             &:last-child {
+//                 margin-right: 0;
+//             }
+//         }
+//         @media (max-width: 600px) {
+//             width: 49%;
+//             &:nth-child(1n+3) {
+//                 margin-top: 6px;
+//             }
+//         }
+//         @media (max-width: 400px) {
+//             width: 100%;
+//             &:not(:first-child) {
+//                 margin-top: 6px;
+//             }
+//         }
+//         .feature-overlay {
+//             opacity: 0;
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             right: 0;
+//             bottom: 0;
+//             @include flexbox;
+//             flex-direction: column;
+//             -ms-flex-direction: column;
+//             justify-content: center;
+//             align-items: center;
+//             text-align: center;
+//             color: white;
+//             background-color: rgba(255, 129, 126, 0.7);
+//             transition: .3s all;
+//             transform: translateX(-100%);
+//             pointer-events: none;
+//             @media (max-width: 400px) {
+//                 opacity: 1;
+//                 transform: translateX(0);
+//             }
+//             img {
+//                 max-width: 40px;
+//                 margin: 0 auto;
+//                 display: inline-block;
+//                 vertical-align: middle;
+//                 margin-bottom: 15px;
+//             }
+//             h3 {
+//                 font-size: 1.1em;
+//             }
+//         }
+//     }
+// }
+
+.features {
+    width: 100%;
+    .features-list {
+        padding: 100px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+    }
+    .feature {
+        position: relative;
+        width: 25%;
+        height: 500px;
+        box-sizing: border-box;
+        padding: 0 2px;
+        @media (min-width: 800px) {
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+        @media (max-width: 800px) {
+            width: 50%;
+            padding: 0;
+            &:nth-child(1n+3) {
+                margin-top: 6px;
+            }
+            &:nth-child(odd) {
+                padding-right: 6px;
+            }
+        }
+        @media (max-width: 800px) {
+            width: 100%;
+            padding: 0;
+            margin-top: 6px;
+            &:nth-child(odd) {
+                padding-right: auto;
+            }
+        }
+        &:hover {
+            .feature-overlay {
+                transform: translateX(0);
+                pointer-events: all;
+                opacity: 1;
+            }
+        }
+        >img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .feature-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 129, 126, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+            opacity: 0;
+            transform: translateX(-100%);
+            pointer-events: none;
+            transition: .3s all;
+            img {
+                max-width: 40px;
+                margin: 0 auto;
+                display: inline-block;
+                vertical-align: middle;
+                margin-bottom: 15px;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+        }
+    }
+}
