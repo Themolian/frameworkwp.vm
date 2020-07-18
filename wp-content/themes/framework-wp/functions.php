@@ -211,13 +211,14 @@ if ( ! function_exists( 'create_post_type' ) ) :
 				'labels' => array(
 					'name' => __( 'Testimonials' ),
 					'singular_name' => __( 'Testimonial' ),
+					'menu_icon'      => 'dashicons-smiley',
 				),
 				'public' => true,
 				'supports' => array ( 'title', 'editor', 'custom-fields', 'page-attributes', 'thumbnail' ),
 				'taxonomies' => array( 'category', 'post_tag' ),
 				'hierarchical' => true,
 				'menu_icon' => get_bloginfo( 'template_directory' ) . "/images/icon.png",
-				'rewrite' => array ( 'slug' => __( 'testimonials' ) ) 
+				'rewrite' => array ( 'slug' => __( 'Testimonials' ) ) 
 			)
 		);
 	
@@ -225,6 +226,29 @@ if ( ! function_exists( 'create_post_type' ) ) :
 	add_action( 'init', 'create_post_type' );
 	
 	endif;
+
+	add_action('init', 'register_custom_posts_init');
+
+	function register_custom_posts_init() {
+		$site_options_labels = array(
+			'name'               => 'Site Options',
+			'singular_name'      => 'Site Option',
+			'menu_name'          => 'Site Options'
+		);
+		$site_options_args = array(
+			'labels'             => $site_options_labels,
+			'public'             => true,
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' )
+		);
+		register_post_type('site_options', $site_options_args);
+
+	}
+
+	register_nav_menus( array(
+		'primary' => __( 'leospa-nav', 'framework-wp' ),
+	) );
 
 ?>
 

@@ -1,0 +1,108 @@
+
+
+.content-wrap {
+    @include flexbox;
+    .image {
+        width: 40%;
+        background: url(../uploads/spa.jpg) no-repeat;
+        img {
+            width: 100%;
+        }
+        @media (max-width: 700px) {
+            display: none;
+        }
+    }
+
+    .form-container {
+        width: 60%;
+        background-color: #fff9f8; 
+        padding: 60px;
+        @media (max-width: 700px) {
+            width: 100%;
+        }
+        h3 {
+            display: none;
+        }
+        .nf-form-content {
+            font-family: $body-font;
+            nf-fields-wrap {
+                @include flexbox;
+                flex-direction: row;
+                flex-wrap: wrap;
+                @media (max-width: 500px) {
+                    flex-direction: column;
+                }
+            }
+            nf-field {
+                width: 48%;
+                box-sizing: border-box;
+                margin-bottom: 15px;
+                font-family: $body-font;
+                &:nth-child(7), &:last-child {
+                    width: 90%;
+                }
+                @media (max-width: 500px) {
+                    width: 100%;
+                    &:nth-child(7), &:last-child {
+                        width: 100%;
+                    }
+                }
+            }
+            .nf-field-container {
+                margin: 0;
+            }
+            input, select {
+                width: 90%;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background: transparent;
+                border: 0;
+                border-bottom: 1px solid lighten(black, 20%);
+                padding: 15px 0;
+                color: lighten(black, 20%);
+                text-transform: uppercase;
+                font-family: $body-font;
+                &:focus {
+                    outline: none;
+                }
+                @media (max-width: 500px) {
+                    width: 100%;
+                }
+            }
+            option {
+                color: lighten(black, 20%);
+            }
+            textarea {
+                width: 100%;
+                background-color: transparent;
+                border: 0;
+                border-bottom: 1px solid lighten(black, 20%);
+                margin-bottom: 15px;
+                font-family: $body-font;
+                &:focus {
+                    outline: none;
+                }
+            }
+            input[type=button] {
+                display: block;
+                max-width: 200px;
+                background-color: $spa-pink;
+                padding: 13px 0;
+                border: 2px solid $spa-pink;
+                text-align: center;
+                font-size: .9em;
+                color: white;
+                transition: .3s all;
+                border-radius: 25px;
+                text-transform: initial;
+                margin-top: 15px;
+                cursor: pointer;
+                &:hover {
+                    background-color: transparent;
+                    color: $spa-pink;
+                }
+            }
+        }
+    }
+}

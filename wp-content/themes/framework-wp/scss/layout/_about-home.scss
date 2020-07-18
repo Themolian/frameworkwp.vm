@@ -1,0 +1,65 @@
+.about-home {
+    padding: 0 20px;
+    .inner {
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+
+        &:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: url(../uploads/redflower.png) no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        &:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 60px;
+            height: 60px;
+            background: url(../uploads/pink-flower.svg);
+            @media (max-width: 1300px) {
+                top: 85%;
+                right: 0;
+            }
+        }
+
+        h3 {
+            font-family: $body-font;
+            color: $light-grey;
+            font-weight: 500;
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            &:before {
+                content: " ";
+                display: block;
+                width: 100px;
+                height: 100px;
+                margin: 0 auto;
+                margin-bottom: 25px;
+                background: url(../uploads/logo-top.svg) no-repeat;
+            }
+        }
+
+        p {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        button {
+            margin-top: 50px;
+        }
+    }
+}

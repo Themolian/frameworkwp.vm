@@ -1,0 +1,92 @@
+
+.procedures {
+    padding: 0 20px;
+    .inner {
+        text-align: center;
+        padding: 100px 0;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+
+        >p {
+            max-width: 700px;
+            margin: 0 auto;
+            margin-bottom: 32px;
+        }
+    }
+}
+.cards {
+    @include flexbox;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    @media (max-width: 800px) {
+        flex-wrap: wrap;
+    }
+    .card {
+        padding: 15px;
+        border: 1px solid $light-grey;
+        text-align: center;
+        transition: .3s all;
+        @media (max-width: 800px) {
+            width: 45%;
+            text-align: center;
+            &:first-child {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+        }
+        @media (max-width: 700px) {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        &:nth-child(2) {
+            margin: 0 10px;
+            @media (max-width: 800px) {
+                margin: 0;
+                padding-right: 12px;
+            }
+            @media (max-width: 700px) {
+                margin-bottom: 15px;
+            }
+        }
+        &:hover {
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            border: 1px solid transparent;
+            button {
+                a {
+                    background-color: $spa-pink;
+                    border: 2px solid $spa-pink;
+                    color: white;
+                }
+            }
+        }
+        .image {
+            background-color: $dark-grey;
+            width: 100%;
+            height: 220px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        h3 {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 25px;
+        }
+        button {
+            a {
+                background-color: black;
+                border: 2px solid black;
+            }
+        }
+    }
+}

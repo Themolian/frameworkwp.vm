@@ -1,0 +1,126 @@
+.contact-home {
+    padding: 0 20px;
+    .inner {
+        padding: 100px 0;
+        text-align: center;
+        @media (max-width: 600px) {
+            padding: 50px 0;
+        }
+        >p {
+            margin-bottom: 25px;
+        }
+    }
+
+    .contact-container {
+        text-align: left;
+        @include flexbox;
+        align-content: center;
+        flex-wrap: wrap;
+        margin-top: 100px;
+        .deets {
+            width: 30%;
+            @media (max-width: 980px) {
+                width: 100%;
+                order: 2;
+                @include flexbox;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            div {
+                padding-left: 80px;
+                position: relative;
+                &:not(:last-child) {
+                    margin-bottom: 25px;
+                }
+                @media (max-width: 980px) {
+                    &:not(:last-child) {
+                        margin: 0;
+                        padding-right: 20px;
+                    }
+                }
+                @media (max-width: 864px) {
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                }
+                &:before {
+                    content: " ";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 40px;
+                    height: 40px;
+                    background-color: $spa-pink;
+                    border-radius: 100%;
+                }
+                &:first-child {
+                    &:before {
+                        background-image: url(../uploads/location.svg);
+                        background-repeat: no-repeat;
+                        background-size: 18px 18px;
+                        background-position: center;
+                    }
+                }
+                &:nth-child(2) {
+                    &:before {
+                        background-image: url(../uploads/email.svg);
+                        background-repeat: no-repeat;
+                        background-size: 18px 18px;
+                        background-position: center;
+                    }
+                }
+                &:nth-child(3) {
+                    &:before {
+                        background-image: url(../uploads/phone.svg);
+                        background-repeat: no-repeat;
+                        background-size: 18px 18px;
+                        background-position: center;
+                    }
+                }
+            }
+        }
+        .contact-form {
+            width: 70%;
+            @media (max-width: 980px) {
+                width: 100%;
+                order: 1;
+                margin-bottom: 25px;
+            }
+            h3, .nf-form-fields-required {
+                display: none;
+            }
+            form {
+                @include flexbox;
+                flex-direction: column;
+                input, textarea {
+                    appearance: none;
+                    background: transparent;
+                    border: 1px solid $light-grey;
+                    display: block;
+                    padding: 15px 25px;
+                    margin-bottom: 25px;
+                    &::placeholder {
+                        text-transform: uppercase;
+                    }
+                }
+                input[type=button] {
+                    background-color: $spa-pink;
+                    padding: 13px 23px;
+                    border: 2px solid $spa-pink;
+                    border-radius: 25px;
+                    color: white;
+                    max-width: 180px;
+                    margin-bottom: 0;
+                    transition: .3s all;
+                    font-family: $body-font;
+                    &:hover {
+                        background-color: transparent;
+                        color: $spa-pink;
+                    }
+                }
+            }
+        }
+    }
+}
